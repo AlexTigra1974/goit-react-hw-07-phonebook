@@ -2,7 +2,7 @@ import { Formik, Field } from 'formik';
 import { ContactSchema } from './ContactSchema';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contactsSlice';
+import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/selectors';
 import { nanoid } from '@reduxjs/toolkit';
 
@@ -30,6 +30,7 @@ export const ContactForm = () => {
       alert(`${number} is already in contacts.`);
     }
     dispatch(addContact(newContact));
+
     action.resetForm();
   };
 
