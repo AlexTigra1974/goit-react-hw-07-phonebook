@@ -3,13 +3,13 @@ import { ContactSchema } from './ContactSchema';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
-import { getContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/selectors';
 import { nanoid } from '@reduxjs/toolkit';
 
 import { Form, FormField, Button, ErrorMessage } from './ContactForm.styled';
 
 export const ContactForm = () => {
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
   //  setContacts([...contacts, newContact]);
   const handleSubmit = ({ name, number }, action) => {
